@@ -3,7 +3,7 @@
 //When the DOM content fully loaded
 document.addEventListener('DOMContentLoaded', () => {
     const pages = document.querySelector("#pages-wrapper")
-    createDivs(pages, 20)
+    createDivs(pages, 10)
 
     $(".arrowRight").click( event => {
         slideElements(pages, 205, 1)
@@ -12,8 +12,16 @@ document.addEventListener('DOMContentLoaded', () => {
         slideElements(pages, 205, -1)
     })
 
+    let d = 1
+    let previous = 0
+    let dir = true
     const interval = setInterval(() => {
-        slideElements(pages, 1, 1)
+        dir ? d = 1 : d = -1
+        slideElements(pages, 1, d)
+        if(previous === pages.scrollLeft) {
+            dir = !dir
+        }
+        previous+=d
     },10)
 
     //console.log(document.body.offsetLeft,pages.parentElement.offsetLeft,pages.offsetLeft,Array.from(pages.children)[0].offsetLeft)
@@ -31,7 +39,7 @@ function createDivs(parent, numberOfDivs) {
 }
 
 function getRandomColor() {
-    return `rgba(${getRandomStain()},${getRandomStain()},${getRandomStain()},0)`
+    return `rgba(${getRandomStain()},${getRandomStain()},${getRandomStain()},0.5)`
 }
 
 function slideElements(parent, direction, pixels) {
