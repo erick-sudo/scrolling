@@ -12,12 +12,17 @@ html{
     padding: 1em;
     border: solid 1px orangered;
     margin: 2em 1em;
+
+    display: flex;
+    position: relative;
+
+    align-items: center;
 }
 
 #pages-wrapper {
     border: solid 1px orange;
     display: flex;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     overflow-x: hidden;
 }
@@ -30,4 +35,24 @@ html{
 
 #page0{
     height: 400px;
+}
+
+.arrows{
+    height: 2em;
+    width: 2em;
+    background-color: transparent;
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+}
+.arrows img {
+    width: 100%;
+}
+.arrowLeft{
+    left: 0;
+}
+.arrowRight{
+    
+    right: 0;
 }
