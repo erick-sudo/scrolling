@@ -1,5 +1,5 @@
 html{
-    background-color: rgba(2, 24, 22, 0.815);
+    background-color: rgba(8, 8, 8, 0.993);
 }
 
 *{
@@ -7,10 +7,13 @@ html{
     box-sizing: border-box;
     margin: 0;
 }
+body{
+    
+}
 #container{
     background-color: rgba(22, 18, 18, 0.815);
     padding: 1em;
-    border: solid 1px orangered;
+    border: solid 1px rgb(73, 65, 49);
     margin: 2em 1em;
 
     display: flex;
@@ -20,7 +23,7 @@ html{
 }
 
 #pages-wrapper {
-    border: solid 1px orange;
+    border: solid 1px rgb(73, 65, 49);
     display: flex;
     width: 100%;
     margin: 0 auto;
@@ -30,7 +33,9 @@ html{
 .pages {
     min-height: 200px;
     min-width: 200px;
-    margin-left: 5px;
+    margin: 5px 0px 5px 5px;
+
+    border: solid 1px rgb(73, 65, 49);
 }
 
 #page0{
@@ -55,4 +60,17 @@ html{
 .arrowRight{
     
     right: 0;
+}
+
+.anim1 {
+    animation: expandwidth 2s forwards;
+}
+
+@keyframes expandwidth {
+    from{
+        min-width: 0px;
+    }
+    to{
+        width: 100%;
+    }
 }

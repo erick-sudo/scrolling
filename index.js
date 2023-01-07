@@ -6,11 +6,17 @@ document.addEventListener('DOMContentLoaded', () => {
     createDivs(pages, 20)
 
     $(".arrowRight").click( event => {
-        slideElements(pages, 1)
+        slideElements(pages, 205, 1)
     })
     $(".arrowLeft").click( event => {
-        slideElements(pages, -1)
+        slideElements(pages, 205, -1)
     })
+
+    const interval = setInterval(() => {
+        slideElements(pages, 1, 1)
+    },10)
+
+    //console.log(document.body.offsetLeft,pages.parentElement.offsetLeft,pages.offsetLeft,Array.from(pages.children)[0].offsetLeft)
 })
 
 function createDivs(parent, numberOfDivs) {
@@ -25,18 +31,15 @@ function createDivs(parent, numberOfDivs) {
 }
 
 function getRandomColor() {
-    return `rgba(${getRandomStain()},${getRandomStain()},${getRandomStain()},0.7)`
+    return `rgba(${getRandomStain()},${getRandomStain()},${getRandomStain()},0)`
 }
 
-function slideElements(parent, direction) {
-    //parent.scroll(100,0)
-    //     top: 0,
-    //     left: 205,
-    //     behavior: 'smooth'
-    // })
-
-    console.log(parent.scrollLeft)
-    parent.scrollLeft+=(direction*205)
+function slideElements(parent, direction, pixels) {
+    parent.scrollBy({
+        top: 0,
+        left: direction*pixels,
+        behaviour: 'smooth'
+    })
 }
 
 const getRandomStain = () => (Math.random()*1000)%255
