@@ -1,0 +1,33 @@
+html{
+    background-color: rgba(2, 24, 22, 0.815);
+}
+
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+#container{
+    background-color: rgba(22, 18, 18, 0.815);
+    padding: 1em;
+    border: solid 1px orangered;
+    margin: 2em 1em;
+}
+
+#pages-wrapper {
+    border: solid 1px orange;
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+.pages {
+    min-height: 200px;
+    min-width: 200px;
+    margin-left: 5px;
+}
+
+#page0{
+    height: 400px;
+}
