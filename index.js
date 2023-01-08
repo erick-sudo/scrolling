@@ -22,10 +22,18 @@ document.addEventListener('DOMContentLoaded', () => {
             dir = !dir
         }
         previous+=d
-    },10)
+    },100)
 
     //console.log(document.body.offsetLeft,pages.parentElement.offsetLeft,pages.offsetLeft,Array.from(pages.children)[0].offsetLeft)
 })
+
+function createImage(url) {
+    let img = document.createElement("img")
+    img.setAttribute("src", url)
+    img.classList.add("images")
+
+    return img
+}
 
 function createDivs(parent, numberOfDivs) {
     for(let i=0;i<numberOfDivs;i++) {
@@ -33,6 +41,8 @@ function createDivs(parent, numberOfDivs) {
         div.classList.add("pages")
         div.style.backgroundColor = getRandomColor()
         div.setAttribute("id", `page${i}`)
+
+        div.appendChild(createImage("https://cdn.pixabay.com/photo/2020/03/22/16/38/metro-4957736_960_720.jpg"))
 
         parent.appendChild(div)
     }
