@@ -32,7 +32,8 @@ body{
 }
 
 .pages {
-    min-height: 200px;
+    /* min-height: 200px; */
+    height: max-content;
     min-width: 200px;
     margin: 5px 0px 5px 5px;
 
@@ -66,6 +67,8 @@ body{
 .images{
     width: 100%;
     margin: 0;
+    /* border: solid 1px white; */
+    display: block;
 
 }
 

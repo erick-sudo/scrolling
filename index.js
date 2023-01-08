@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             dir = !dir
         }
         previous+=d
-    },100)
+    },1)
 
     //console.log(document.body.offsetLeft,pages.parentElement.offsetLeft,pages.offsetLeft,Array.from(pages.children)[0].offsetLeft)
 })
@@ -49,7 +49,7 @@ function createDivs(parent, numberOfDivs) {
 }
 
 function getRandomColor() {
-    return `rgba(${getRandomStain()},${getRandomStain()},${getRandomStain()},0.5)`
+    return  //`rgba(${getRandomStain()},${getRandomStain()},${getRandomStain()},0.5)`
 }
 
 function slideElements(parent, direction, pixels) {
